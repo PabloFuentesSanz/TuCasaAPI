@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platos",
+  "info": {
+    "singularName": "plato",
+    "pluralName": "platos",
+    "displayName": "Plato"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Descripcion": {
+      "type": "string"
+    },
+    "Imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Precio": {
+      "type": "decimal"
+    },
+    "menus": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::menu.menu",
+      "inversedBy": "platos"
+    }
+  }
+}
